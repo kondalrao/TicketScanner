@@ -1,0 +1,28 @@
+{
+  "name": "ticket",
+  "version": "1.0.0",
+  "source": "src/index.html",
+  "license": "MIT",
+  "scripts": {
+    "clean-dist": "rm -rf dist && mkdir dist",
+    "copy-img": "cp -vR ./static/img ./dist",
+    "copy-data": "cp -r ./static/* dist",
+    "copy-assets": "cp -r src/assets/* dist",
+    "copy-files": "npm run copy-img & npm run copy-assets & npm run copy-data",
+    "init": "npm run clean-dist && npm run copy-files",
+    "start": "npm run init && parcel",
+    "build": "npm run init && parcel build"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.2.6",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "framer-motion": "^7.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.7.0",
+    "process": "^0.11.10"
+  }
+}
