@@ -1,7 +1,7 @@
 import {Flex, VStack, Stack, Heading, Box, Image, Input, Center, Link} from "@chakra-ui/react";
-import { useRef, useEffect } from 'react';
 
 import Barcode from "../components/barcode";
+import config from '../config.json'
 
 export default function Ticket() {
 
@@ -15,7 +15,7 @@ export default function Ticket() {
       <Stack>
         <Flex direction="row" spacing="200px" p="16" alignSelf="flex-start">
           <Box>
-            <Image alignSelf="center" src="./img/MayaBazaar.jpeg"/>
+            <Image alignSelf="center" src={config["display_image"]}/>
           </Box>
           <Center p="8">
               <Barcode />
